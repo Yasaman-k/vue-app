@@ -1,4 +1,4 @@
-# vue-app
+# product and cart
 
 ## Project setup
 ```
