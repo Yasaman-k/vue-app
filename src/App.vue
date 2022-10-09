@@ -20,7 +20,7 @@
     </div>
   </header>
 
-  <router-view :inventory="inventory" />
+  <router-view :inventory="inventory" :addToCart="addToCart" />
 
   <Sidebar v-if='showSidebar' :toggle='toggleSidebar' :cart='cart' :inventory='inventory' :remove='deleteFromCart' />
 </template>

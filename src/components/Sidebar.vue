@@ -25,9 +25,9 @@
             <tr>
               <td><i class="icofont-carrot icofont-3x"></i></td>
               <td>{{ key }}</td>
-              <td>\${{ getPrice(key) }}</td>
+              <td>${{ getPrice(key) }}</td>
               <td class="center">{{ quantity }}</td>
-              <td>\${{ (quantity * getPrice(key)).toFixed(2) }}</td>
+              <td>${{ (quantity * getPrice(key)).toFixed(2) }}</td>
               <td class="center">
                 <button class="btn btn-light cart-remove" @click="remove(key)">
                   &times;
@@ -41,7 +41,7 @@
           <em>No items in cart</em>
         </p>
         <div class="spread">
-          <span><strong>Total:</strong>\${{ calculateTotal() }}</span>
+          <span><strong>Total:  </strong>${{ calculateTotal() }}</span>
           <button class="btn btn-light">Checkout</button>
         </div>
       </div>
