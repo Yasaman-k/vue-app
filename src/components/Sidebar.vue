@@ -23,7 +23,7 @@
           </thead>
           <tbody v-for="(quantity, key, i) in cart" :key="i">
             <tr>
-              <td><i class="icofont-carrot icofont-3x"></i></td>
+              <td> <i class="icofont-3x" :class="`icofont-${ getProductIcon(key) }`"></i> </td>
               <td>{{ key }}</td>
               <td>${{ getPrice(key) }}</td>
               <td class="center">{{ quantity }}</td>
@@ -41,7 +41,7 @@
           <em>No items in cart</em>
         </p>
         <div class="spread">
-          <span><strong>Total:  </strong>${{ calculateTotal() }}</span>
+          <span><strong>Total: </strong>${{ calculateTotal() }}</span>
           <button class="btn btn-light">Checkout</button>
         </div>
       </div>
@@ -58,6 +58,12 @@ export default {
         return p.name === name
       })
       return product.price.USD
+    },
+    getProductIcon(name) {
+      const product = this.inventory.find((p)=>{
+        return p.name === name
+      })
+      return product.icon
     },
     calculateTotal() {
       const total = Object.entries(this.cart).reduce((prv, curr) => {
